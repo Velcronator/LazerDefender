@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class EnermyPathing : MonoBehaviour
 {
-    [SerializeField] List<Transform> waypoints;
-    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] WaveConfig waveConfig;
+    List<Transform> waypoints;
+
 
     int waypointIndex = 0;
     private Vector3 targetPosition;
-    private Vector3 currentPosition;
+    //private Vector3 currentPosition;
     private float stepThisFrame;
 
     // Start is called before the first frame update
     void Start()
     {
+        waypoints = waveConfig.GetWaypoints();
         transform.position = waypoints[waypointIndex].transform.position;
     }
 
@@ -31,7 +33,7 @@ public class EnermyPathing : MonoBehaviour
         {
             // move towards target waypoint
             targetPosition = waypoints[waypointIndex].transform.position;
-            stepThisFrame = moveSpeed * Time.deltaTime;
+            stepThisFrame = waveConfig.GetMoveSpeed() * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, stepThisFrame);
             // check to see if reached the waypoint
             if (transform.position == targetPosition)
