@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class EnermyPathing : MonoBehaviour
 {
-    [SerializeField] WaveConfig waveConfig;
+    WaveConfig waveConfig;
     List<Transform> waypoints;
 
 
     int waypointIndex = 0;
     private Vector3 targetPosition;
-    //private Vector3 currentPosition;
     private float stepThisFrame;
 
     // Start is called before the first frame update
@@ -24,6 +23,11 @@ public class EnermyPathing : MonoBehaviour
     void Update()
     {
         MoveAlongWaypointPath();
+    }
+
+    public void SetWaveConfig(WaveConfig WaveConfigLocal)
+    {
+        this.waveConfig = WaveConfigLocal;
     }
 
     private void MoveAlongWaypointPath()
