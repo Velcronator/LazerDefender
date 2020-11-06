@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fef6415e8d3ff4d97edafa415e6ccf, type: 3}
   m_Name: Wave 4
   m_EditorClassIdentifier: 
-  enermyPrefab: {fileID: 7012594958866736713, guid: be3a25bc3e6c22342a1957f203173dfe,
+  enemyPrefab: {fileID: 7012594958866736713, guid: be3a25bc3e6c22342a1957f203173dfe,
     type: 3}
-  pathPrefab: {fileID: 1677700027888882015, guid: fde4134f76f92d946bf87ffeceddafc4,
+  pathPrefab: {fileID: 1677700027888882015, guid: 7c25b823e6cda0340bf570de097306f6,
     type: 3}
   timeBetweenSpawns: 0.5
   spawnRandomFactor: 0.3

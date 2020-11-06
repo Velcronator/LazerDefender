@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnermyPathing : MonoBehaviour
+public class EnemyPathing : MonoBehaviour
 {
     WaveConfig waveConfig;
     List<Transform> waypoints;
