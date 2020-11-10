@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391f26309b4eac74e8575bf16885cd89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 461588325463244863, guid: ccb568751b338cf4194d4275ffaf0232,
+    type: 3}
   enemyLaserPrefab: {fileID: 6742869172958280178, guid: 6611329fbc4bf0444a2cc6027760b03b,
     type: 3}
   health: 300
@@ -115,6 +117,9 @@ MonoBehaviour:
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
   projectileSpeed: 10
+  durationOfExplosion: 2
+  deathSoundClip: {fileID: 8300000, guid: aa9ff613b70869340a44ddc7293745eb, type: 3}
+  laserSoundClip: {fileID: 8300000, guid: 7216ec27ef3026e44a272c33f97eef0f, type: 3}
 --- !u!58 &4214206868043455678
 CircleCollider2D:
   m_ObjectHideFlags: 0

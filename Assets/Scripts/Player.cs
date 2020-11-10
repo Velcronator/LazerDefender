@@ -11,11 +11,21 @@ public class Player : MonoBehaviour
     [SerializeField] float xPadding = 1f;
     [SerializeField] float yPadding = 1f;
     [SerializeField] int health = 200;
+    [SerializeField] float durationOfExplosion = 2f;
+
 
     [Header("Projectile")]
+    [SerializeField] GameObject explosionPrefab = null;
     [SerializeField] GameObject laserPrefab = null;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringWaitPeriod = 0.1f;
+
+    [Header("SoundFX")]
+    [SerializeField] AudioClip laserClip = null;
+    [SerializeField] AudioClip deathClip = null;
+    [SerializeField] [Range(0, 1)] float laserClipVolume = 0.2f;
+    [SerializeField] [Range(0, 1)] float deathClipVolume = 0.3f;
+
 
     Coroutine firingCoroutine;
 
@@ -52,14 +62,22 @@ public class Player : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            ProcessDeath();
         }
+    }
+    private void ProcessDeath()
+    {
+        AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position, deathClipVolume);
+        GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
+        Destroy(explosion, durationOfExplosion);
+        Destroy(gameObject);
     }
 
     private void Fire()
     {
         if (Input.GetButtonDown("Fire1") && (firingCoroutine == null))
         {
+
             firingCoroutine = StartCoroutine(FireContinuously());
         }
         if (Input.GetButtonUp("Fire1") && !Input.GetButton("Fire1"))
@@ -73,6 +91,7 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
+            AudioSource.PlayClipAtPoint(laserClip, Camera.main.transform.position, laserClipVolume);
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
             yield return new WaitForSeconds(projectileFiringWaitPeriod);
