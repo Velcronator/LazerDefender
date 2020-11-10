@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 476488330}
   - component: {fileID: 1816938558584758682}
   - component: {fileID: -4226175610888871912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enermy 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
