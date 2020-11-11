@@ -1,17 +1,32 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
+    private float delayInSeconds = 4f;
+    CanvasDude cd;
 
+    private void Start()
+    {
+        cd = FindObjectOfType<CanvasDude>();
+    }
 
     public void LoadGameOver()
     {
+        cd.gameOverPanelOn();
+        StartCoroutine("DelayGameOverScene");
+    }
+
+    IEnumerator DelayGameOverScene()
+    {
+        yield return new WaitForSeconds(delayInSeconds);
         SceneManager.LoadScene("GameOver");
     }
 
     public void LoadGameScene()
     {
+        cd.gameOverPanelOff();
         SceneManager.LoadScene("Game");
     }
 
