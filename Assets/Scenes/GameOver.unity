@@ -511,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: -688}
+  m_AnchoredPosition: {x: 1, y: -121}
   m_SizeDelta: {x: 568.1, y: 236.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537527585
@@ -838,29 +838,27 @@ PrefabInstance:
     - target: {fileID: 5793720901535534432, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
         type: 3}
       propertyPath: m_Name
-      value: GameOverTxt
+      value: PlayAgainTxt
       objectReference: {fileID: 0}
     - target: {fileID: 5793720901535534438, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
         type: 3}
       propertyPath: m_text
-      value: 'Game Over
-
-        Play Again'
+      value: Play Again
       objectReference: {fileID: 0}
     - target: {fileID: 5793720901535534438, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 20
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5793720901535534438, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5793720901535534438, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5793720901535534438, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
         type: 3}
@@ -872,10 +870,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 416208751}
+    - target: {fileID: 5793720902107097323, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -613
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793720902107097323, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15
+      objectReference: {fileID: 0}
     - target: {fileID: 5793720902493009156, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
         type: 3}
       propertyPath: m_Name
-      value: GameOverBtn
+      value: PlayAgainBtn
       objectReference: {fileID: 0}
     - target: {fileID: 5793720902493009210, guid: de0eaf12deb59a84fa7cf9c1ba0fea7c,
         type: 3}

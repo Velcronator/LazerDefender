@@ -26,7 +26,6 @@ public class Level : MonoBehaviour
 
     public void LoadGameScene()
     {
-        cd.gameOverPanelOff();
         SceneManager.LoadScene("Game");
     }
 
