@@ -2,13 +2,21 @@
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Prefab Links")]
     [SerializeField] GameObject explosionPrefab = null;
     [SerializeField] GameObject enemyLaserPrefab = null;
+
+    [Header("Enemy Stats")]
+    [SerializeField] int scoreValue = 100;
     [SerializeField] float health = 300;
     [SerializeField] float shotCounter;
+
+    [Header("Shooting Stats")]
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
     [SerializeField] float projectileSpeed = 10f;
+
+    [Header("VFX")]
     [SerializeField] float durationOfExplosion = 2f;
 
     [Header("Sounds")]
@@ -67,6 +75,7 @@ public class Enemy : MonoBehaviour
 
     private void ProcessDeath()
     {
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
         GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, durationOfExplosion);
         Destroy(gameObject);

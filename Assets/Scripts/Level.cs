@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    private float delayInSeconds = 4f;
+    private float delayInSeconds = 2f;
     CanvasDude cd;
 
     private void Start()
@@ -14,12 +14,12 @@ public class Level : MonoBehaviour
 
     public void LoadGameOver()
     {
-        cd.gameOverPanelOn();
         StartCoroutine("DelayGameOverScene");
     }
 
     IEnumerator DelayGameOverScene()
     {
+        cd.gameOverPanelOn();
         yield return new WaitForSeconds(delayInSeconds);
         SceneManager.LoadScene("GameOver");
     }
@@ -27,6 +27,7 @@ public class Level : MonoBehaviour
     public void LoadGameScene()
     {
         SceneManager.LoadScene("Game");
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadStartMenu()
