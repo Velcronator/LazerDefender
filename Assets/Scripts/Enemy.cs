@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Stats")]
     [SerializeField] int scoreValue = 100;
     [SerializeField] float health = 300;
-    [SerializeField] float shotCounter;
+    float shotCounter;
 
     [Header("Shooting Stats")]
     [SerializeField] float minTimeBetweenShots = 0.2f;

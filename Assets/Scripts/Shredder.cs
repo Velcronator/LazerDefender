@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 
 public class Shredder : MonoBehaviour
@@ -7,6 +7,9 @@ public class Shredder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject.Destroy(collision.gameObject);
+        if (collision.tag != "Enemy")
+        {
+            GameObject.Destroy(collision.gameObject);
+        }
     }
 }

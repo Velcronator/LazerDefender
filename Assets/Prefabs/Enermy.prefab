@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -7786428038084122826}
   m_Layer: 9
   m_Name: Enermy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,8 +114,8 @@ MonoBehaviour:
     type: 3}
   enemyLaserPrefab: {fileID: 6742869172958280178, guid: 6611329fbc4bf0444a2cc6027760b03b,
     type: 3}
+  scoreValue: 100
   health: 300
-  shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
   projectileSpeed: 10
